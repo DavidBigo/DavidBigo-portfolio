@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import profilePic from './assets/photo/photoprofil.png';
-import transAcademiaImg from './assets/photo/trans-academia.png';
+import profilePic from './assets/photo/photoprofil.webp';
+import transAcademiaImg from './assets/photo/trans-academia.webp';
+import angelanieImg from './assets/photo/angelanie-project.webp';
+import misterbImg from './assets/photo/misterb-project.webp';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Briefcase, User, MessageSquare, Sun, Moon, Zap, Database, Globe, Cpu } from 'lucide-react';
 
 function App() {
@@ -119,12 +121,13 @@ useEffect(() => {
       title: 'Plateforme E-Commerce',
       description: 'Solution e-commerce complète avec gestion d\'inventaire en temps réel et traitement des paiements.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      link: '#'
+      link: '#',
+      image: angelanieImg
     },
     {
       title: 'Trans-Academia — Plateforme de gestion académique',
       description: 'Solution web axée sur la mobilité étudiante, intégrant la gestion administrative et un système de paiement mobile par carte d’abonnement, pour un transport scolaire plus simple, connecté et efficace.',
-      tech: ['React', 'Vite', 'Tailwind CSS', 'PHP Slim', 'MySQL'],
+      tech: ['HTML5','React', 'Vite', 'Tailwind CSS', 'PHP Slim', 'MySQL'],
       link: 'https://trans-academia.cd/',
       image: transAcademiaImg
     },
@@ -132,7 +135,8 @@ useEffect(() => {
       title: 'Tableau de Bord Analytics',
       description: 'Tableau de bord de visualisation de données pour l\'intelligence métier et le suivi de performances.',
       tech: ['React', 'D3.js', 'Express', 'MongoDB'],
-      link: '#'
+      link: '#',
+      image: misterbImg
     }
   ];
 
@@ -140,25 +144,25 @@ useEffect(() => {
     {
       category: 'Frontend',
       icon: Globe,
-      items: ['React', 'TypeScript', 'Tailwind CSS'],
+      items: ['React', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
       category: 'Backend',
       icon: Database,
-      items: ['MySQL', 'PostgreSQL', 'REST APIs'],
+      items: ['MySQL', 'PostgreSQL', 'REST APIs', 'AdonisJS', 'Node.js', 'PHP'],
       color: 'from-emerald-500 to-teal-500'
     },
     {
       category: 'Outils',
       icon: Zap,
-      items: ['Git', 'Postman', 'Vercel', 'Figma'],
+      items: ['Git', 'Postman', 'Vercel', 'Figma', 'VS Code'],
       color: 'from-purple-500 to-pink-500'
     },
     {
       category: 'Soft Skills',
       icon: Cpu,
-      items: ['Résolution de problèmes', 'Leadership', 'Communication', 'Agile'],
+      items: ['Résolution de problèmes', 'Leadership', 'Communication', 'Agile', 'Travail en équipe', 'Adaptabilité', 'Gestion du temps', 'Pensée critique', 'Créativité'],
       color: 'from-orange-500 to-red-500'
     }
   ];
