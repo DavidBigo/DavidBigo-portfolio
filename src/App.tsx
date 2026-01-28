@@ -373,9 +373,7 @@ useEffect(() => {
               <p className={`text-lg leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                 Développeur Full Stack junior avec une expérience en entreprise, maîtrisant HTML, Tailwind CSS, JavaScript, React, AdonisJS et PHP pour concevoir des applications web modernes et performantes. À l’aise avec les outils de collaboration et de test (Git, GitHub, Postman) ainsi qu’avec Figma pour l’intégration UI/UX, je transforme les besoins fonctionnels en solutions claires, fiables et esthétiques au sein d’équipes dynamiques.
               </p>
-              <p className={`text-lg leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                Mon approche combine expertise technique et résolution créative de problèmes, assurant que chaque projet non seulement répond aux exigences mais les dépasse. Je crois à l'importance d'un code propre, maintenable et à rester à jour avec les dernières technologies.
-              </p>
+
               <div className="flex flex-wrap gap-4">
                 <div className={`px-6 py-3 rounded-lg ${isDark ? 'bg-blue-900 bg-opacity-50' : 'bg-blue-50'}`}>
                   <p className={`text-3xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
