@@ -4,6 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import transAcademiaImg from './assets/photo/trans-academia.webp';
 import angelanieImg from './assets/photo/angelanie-project.webp';
 import misterbImg from './assets/photo/misterb-project.webp';
+import CountUp, { useCountUp } from "react-countup";
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Briefcase, User, MessageSquare, Sun, Moon, Zap, Database, Globe, Cpu } from 'lucide-react';
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
   const [isDark, setIsDark] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const burgerRef = useRef<HTMLButtonElement | null>(null);
-
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -378,15 +378,18 @@ useEffect(() => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className={`px-6 py-3 rounded-lg ${isDark ? 'bg-blue-900 bg-opacity-50' : 'bg-blue-50'}`}>
-                  <p className={`text-3xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>1+</p>
+                  <p className={`text-3xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                    <CountUp end={1} duration={5} enableScrollSpy />+</p>
                   <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Années d'expérience</p>
                 </div>
                 <div className={`px-6 py-3 rounded-lg ${isDark ? 'bg-cyan-900 bg-opacity-50' : 'bg-cyan-50'}`}>
-                  <p className={`text-3xl font-bold ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>3+</p>
+                  <p className={`text-3xl font-bold ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>
+                    <CountUp end={3} duration={5} enableScrollSpy />+</p>
                   <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Projets complétés</p>
                 </div>
                 <div className={`px-6 py-3 rounded-lg ${isDark ? 'bg-blue-900 bg-opacity-50' : 'bg-blue-50'}`}>
-                  <p className={`text-3xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>600+</p>
+                  <p className={`text-3xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                    <CountUp end={600} duration={3} enableScrollSpy />+</p>
                   <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>utilisateurs</p>
                 </div>
               </div>
