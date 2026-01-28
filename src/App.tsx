@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import profilePic from './assets/photo/photoprofil.webp';
+import { FaWhatsapp } from "react-icons/fa";
 import transAcademiaImg from './assets/photo/trans-academia.webp';
 import angelanieImg from './assets/photo/angelanie-project.webp';
 import misterbImg from './assets/photo/misterb-project.webp';
@@ -70,28 +71,30 @@ useEffect(() => {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+useEffect(() => {
+  const sections = document.querySelectorAll("section[id]");
 
-      const sections = ['home', 'about', 'projects', 'skills', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
         }
-        return false;
       });
+    },
+    {
+      root: null,
+      threshold: 0.6, // 60% visible
+    }
+  );
 
-      if (current) {
-        setActiveSection(current);
-      }
-    };
+  sections.forEach((section) => observer.observe(section));
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  return () => {
+    sections.forEach((section) => observer.unobserve(section));
+  };
+}, []);
+
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -126,7 +129,7 @@ useEffect(() => {
     },
     {
       title: 'Trans-Academia — Plateforme de gestion académique',
-      description: 'Solution web axée sur la mobilité étudiante, intégrant la gestion administrative et un système de paiement mobile par carte d’abonnement, pour un transport scolaire plus simple, connecté et efficace.',
+      description: 'Solution web et mobile axée sur la mobilité étudiante, intégrant la gestion administrative et un système de paiement mobile par carte d’abonnement, pour un transport scolaire plus simple, connecté et efficace.',
       tech: ['HTML5','React', 'Vite', 'Tailwind CSS', 'PHP Slim', 'MySQL'],
       link: 'https://trans-academia.cd/',
       image: transAcademiaImg
@@ -318,6 +321,18 @@ useEffect(() => {
               </button>
             </div>
             <div className="flex items-center justify-center gap-6 mt-12">
+                            <a href="mailto:bigodavid1@gmail.com" className={`p-3 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-110 ${
+                isDark ? 'bg-slate-800 text-slate-300' : 'bg-white text-slate-700'
+              }`}>
+                <Mail size={24} />
+              </a>
+                            <a href="https://wa.me/243823069559?text=Bonjour%20David,%20j’ai%20vu%20votre%20portfolio" target="_blank" rel="noopener noreferrer"
+              className={`p-3 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-110 ${
+                isDark ? 'bg-slate-900 text-slate-300' : 'bg-white text-slate-700'
+              }`}
+            >
+              <FaWhatsapp size={24} />
+            </a>
               <a href="https://github.com/DavidBigo" className={`p-3 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-110 ${
                 isDark ? 'bg-slate-800 text-slate-300' : 'bg-white text-slate-700'
               }`}>
@@ -328,11 +343,8 @@ useEffect(() => {
               }`}>
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:bigodavid1@gmail.com" className={`p-3 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-110 ${
-                isDark ? 'bg-slate-800 text-slate-300' : 'bg-white text-slate-700'
-              }`}>
-                <Mail size={24} />
-              </a>
+
+
             </div>
           </div>
         </div>
@@ -363,8 +375,8 @@ useEffect(() => {
                   <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Projets complétés</p>
                 </div>
                 <div className={`px-6 py-3 rounded-lg ${isDark ? 'bg-blue-900 bg-opacity-50' : 'bg-blue-50'}`}>
-                  <p className={`text-3xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>300+</p>
-                  <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Clients satisfaits</p>
+                  <p className={`text-3xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>600+</p>
+                  <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>utilisateurs</p>
                 </div>
               </div>
             </div>
@@ -518,6 +530,14 @@ useEffect(() => {
                 <Mail className="text-blue-600" size={24} />
                 <span className="font-medium">bigodavid1@gmail.com</span>
               </a>
+              <a href="https://wa.me/243823069559?text=Bonjour%20David,%20j’ai%20vu%20votre%20portfolio" target="_blank" rel="noopener noreferrer"
+              className={`flex items-center gap-3 px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 ${
+                isDark ? 'bg-slate-900 text-slate-300' : 'bg-white text-slate-700'
+              }`}
+            >
+              <FaWhatsapp className="text-blue-600" size={24} />
+              <span className="font-medium">WhatsApp</span>
+            </a>
               <a
                 href="https://github.com/DavidBigo"
                 target="_blank"
