@@ -147,13 +147,13 @@ useEffect(() => {
     {
       category: 'Frontend',
       icon: Globe,
-      items: ['React', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript'],
+      items: ['React', 'Vue.Js', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
       category: 'Backend',
       icon: Database,
-      items: ['MySQL', 'PostgreSQL', 'REST APIs', 'AdonisJS', 'Node.js', 'PHP'],
+      items: ['MySQL', 'PostgreSQL', 'REST APIs', 'AdonisJS', 'Node.js', 'PHP', 'Laravel'],
       color: 'from-emerald-500 to-teal-500'
     },
     {
