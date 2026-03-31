@@ -124,7 +124,7 @@ useEffect(() => {
       title: 'Plateforme E-Commerce',
       description: 'Solution e-commerce complète avec gestion d\'inventaire en temps réel et traitement des paiements.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      link: 'https://angelanie-boutique.vercel.app/',
+      link: 'https://luxorify.base44.app/',
       image: angelanieImg
     },
     {
